@@ -1,0 +1,54 @@
+﻿@model List<Competidor>
+@{
+    ViewData["Title"] = "Torneio de Luta";
+}
+<div class="text-center">
+    <h1>
+        Torneio de Luta
+    </h1>
+</div>
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}
+
+<form method="post" action="@Url.Action("Resultado")">
+
+    <div class="row m-4 mt-1 ps-0 pe-0">
+    <div class="ms-3">
+        <input class="btn btn-dark btn-sm" style="width:65px; height:35px" type="submit" value="Iniciar"/>
+    </div>
+        @foreach (var competidor in Model)
+        {
+            <div class="card h-100 m-3 ps-0 pe-0" style="width: 22%;">
+                <label class="form-check-label card-title py-2 ps-2 border-0 border-bottom border-light bg-secondary bg-opacity-10 mb-0" for="@competidor.Id">
+                <input class="form-check-input" type="checkbox" value="@competidor.Id" id="@competidor.Id" name="competidoresId">
+                    <b>@competidor.Nome</b>
+                </label>
+                <div class="card-text p-3 bg-light">
+                    <div>
+                        <b>Idade:</b> @competidor.Idade
+                    </div>
+                    <div>
+                        <b>Lutas:</b> @competidor.TotalLutas
+                    </div>
+                    <div>
+                        <b>Derrotas:</b> @competidor.Derrotas
+                    </div>
+                    <div>
+                        <b>Vitorias:</b> @competidor.Vitorias
+                    </div>
+                    <div>
+                        <b>Artes Marciais:</b> @competidor.ArtesMarciais
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</form>
+
