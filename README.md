@@ -7,6 +7,7 @@ Simula um torneio com 16 participantes, apenas com a fase de mata-mata baseado n
 
 # Instalação
 Copiar o endereço https://github.com/Felipe-Malta/torneio-luta.git usando a opção de clonar repositório do Visual Studio ou na IDE de sua preferência
+
 ![image](https://user-images.githubusercontent.com/80356015/187569237-95da9c12-43f8-405c-93db-ad9859f05843.png)
 
 Após isso, definir ambos projetos para serem inicializados como na imagem a seguir: 
